@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else if(i == 1)
                 {
-                    fragmentTransaction.replace(R.id.containerView, new RoomControlFragment()).commit();
+                    fragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
                     mDrawerLayout.closeDrawers();
                     return true;
                 }
@@ -138,13 +138,15 @@ public class MainActivity extends AppCompatActivity
         listDataHeader = new ArrayList<>();
         listDataChild = new HashMap<>();
 
+
+
         ExpandedMenuModel item1 = new ExpandedMenuModel();
-        item1.setIconName("Home");
+        item1.setIconName("Control Room");
 //        item1.setIconImg(R.drawable.nekaslika);
         listDataHeader.add(item1);
 
         ExpandedMenuModel item2 = new ExpandedMenuModel();
-        item2.setIconName("Control Room");
+        item2.setIconName("Requests");
 //        item1.setIconImg(R.drawable.nekaslika);
         listDataHeader.add(item2);
 
