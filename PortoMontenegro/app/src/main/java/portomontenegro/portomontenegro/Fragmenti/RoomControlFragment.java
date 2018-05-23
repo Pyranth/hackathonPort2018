@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import portomontenegro.portomontenegro.R;
+import portomontenegro.portomontenegro.RoomControl.MainRoomControl;
 
 /**
  * Created by user on 23.5.2018..
@@ -27,8 +28,8 @@ public class RoomControlFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView = inflater.inflate(R.layout.lista_layout, container, false);
-
+        View rootView = inflater.inflate(R.layout.room_control_layout, container, false);
+        new MainRoomControl();
 
         return rootView;
     }

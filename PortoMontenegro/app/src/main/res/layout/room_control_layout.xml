@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:text="Unlock" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Red ON" />
+
+    <Button
+        android:id="@+id/btnCoff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Red Off" />
+
+    <Button
+        android:id="@+id/btnZon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Green On" />
+
+    <Button
+        android:id="@+id/btnZoff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Green Off" />
+</LinearLayout>
