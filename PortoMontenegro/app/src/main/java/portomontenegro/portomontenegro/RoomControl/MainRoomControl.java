@@ -14,7 +14,6 @@ import portomontenegro.portomontenegro.R;
 
 public class MainRoomControl extends Activity
 {
-    private ListView mList;
     private ArrayList<String> arrayList;
     private MyCustomAdapter mAdapter;
     private TCPClient mTcpClient;
