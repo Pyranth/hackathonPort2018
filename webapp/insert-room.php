@@ -1,7 +1,12 @@
 <?php
 
 $db = new mysqli('10.71.9.138', 'monty', 'some_pass', 'hackathon');
-$query = $db->query('DESCRIBE `hotel`');
+
+if ($db->connect_error){
+	die("error");
+}
+
+$query = $db->query('DESCRIBE `room`');
 $fields = array();
 while($row = $query->fetch_assoc()) {
     $fields[] = $row['Field'];
