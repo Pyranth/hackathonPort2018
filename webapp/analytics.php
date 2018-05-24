@@ -27,7 +27,7 @@ session_start();
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-		['Age Bucket', 'Population in thousands'],
+		['Age Bucket', 'Number of tourists'],
 		['0-4', 824.0],
 		['5-9', 784.0],
        ['10-14', 743.0],
@@ -53,7 +53,18 @@ session_start();
         var options = {
           title: 'Tourist population per age',
           curveType: 'function',
-          legend: { position: 'bottom' }
+          legend: { 
+			position: 'bottom'
+		   },
+		  vAxis: {
+			title: 'Population in thousands'
+		  },
+		  hAxis: { 
+			title: 'Age buckets',
+			textStyle: {
+				fontSize: 9
+				}
+			}
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -100,6 +111,11 @@ session_start();
 
     <!-- Page Content -->
     <div class="container">
+      <div class="row">
+		<div id="curve_chart" class="col-lg-12" style="min-height:500px" ></div>
+      </div>
+    </div>
+	<div class="container">
       <div class="row">
 		<div id="curve_chart" class="col-lg-12" style="min-height:500px" ></div>
       </div>
