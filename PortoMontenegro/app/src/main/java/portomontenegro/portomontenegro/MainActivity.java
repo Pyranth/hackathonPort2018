@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
     List<ExpandedMenuModel> listDataHeader;
     HashMap<ExpandedMenuModel, List<String>> listDataChild;
     ImageView bell_book_a_room;
-
+    HomeFragment homeFragment = new HomeFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
                 FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
 
                 if (i == 0) {
-                    startActivity(new Intent(getApplicationContext(), RoomControlActivity.class));
+                    fragmentTransaction.replace(R.id.containerView, homeFragment).commit();
                     mDrawerLayout.closeDrawers();
                     return true;
                 }

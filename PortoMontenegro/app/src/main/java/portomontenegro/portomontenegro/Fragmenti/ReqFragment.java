@@ -10,25 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import org.json.JSONObject;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
+import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import portomontenegro.portomontenegro.R;
-import portomontenegro.portomontenegro.RoomControl.MainRoomControl;
-import portomontenegro.portomontenegro.RoomControl.MyCustomAdapter;
-import portomontenegro.portomontenegro.RoomControl.TCPClient;
 
 /**
  * Created by user on 23.5.2018..
@@ -95,6 +91,7 @@ public class ReqFragment extends Fragment
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
 
             }
