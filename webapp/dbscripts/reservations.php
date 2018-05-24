@@ -1,6 +1,5 @@
 <?php
-
-$mysqli = new mysqli('192.168.1.61','monty','some_pass','hackathon');
+require_once 'config.php';
 $myArray = array();
 if ($result = $mysqli->query("SELECT * FROM reservation")) {
 

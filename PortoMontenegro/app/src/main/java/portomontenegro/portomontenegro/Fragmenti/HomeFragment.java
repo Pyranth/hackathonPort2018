@@ -16,8 +16,6 @@ import android.widget.Switch;
 import java.util.ArrayList;
 
 import portomontenegro.portomontenegro.R;
-import portomontenegro.portomontenegro.RoomControl.MainRoomControl;
-import portomontenegro.portomontenegro.RoomControl.MyCustomAdapter;
 import portomontenegro.portomontenegro.RoomControl.TCPClient;
 
 /**
@@ -26,9 +24,9 @@ import portomontenegro.portomontenegro.RoomControl.TCPClient;
 
 public class HomeFragment extends Fragment
 {
-    private ListView mList;
-    private ArrayList<String> arrayList;
-    private MyCustomAdapter mAdapter;
+//    private ListView mList;
+//    private ArrayList<String> arrayList;
+//    private MyCustomAdapter mAdapter;
     private TCPClient mTcpClient;
     public HomeFragment(){};
 
@@ -46,7 +44,8 @@ public class HomeFragment extends Fragment
         final Switch svicZeleni = (Switch) rootView.findViewById(R.id.switchZelena);
         final Switch svicCrveni = (Switch) rootView.findViewById(R.id.switchCrvena);
         Button test = (Button)rootView.findViewById(R.id.btnUnlock);
-        mAdapter = new MyCustomAdapter(getContext(), arrayList);
+
+//        mAdapter = new MyCustomAdapter(getContext(), arrayList);
 //        mList.setAdapter(mAdapter);
 
         // connect to the server
@@ -63,7 +62,7 @@ public class HomeFragment extends Fragment
                 }
 
                 //refresh the list
-                mAdapter.notifyDataSetChanged();
+//                mAdapter.notifyDataSetChanged();
                 Log.i("Radi", "onClick: jdiaojdiasjda");
             }
         });
@@ -94,7 +93,10 @@ public class HomeFragment extends Fragment
     }
         return rootView;
     }
+
+
     public class connectTask extends AsyncTask<String,String,TCPClient> {
+
 
         @Override
         protected TCPClient doInBackground(String... message) {
@@ -118,10 +120,10 @@ public class HomeFragment extends Fragment
             super.onProgressUpdate(values);
 
             //in the arrayList we add the messaged received from server
-            arrayList.add(values[0]);
-            // notify the adapter that the data set has changed. This means that new message received
-            // from server was added to the list
-            mAdapter.notifyDataSetChanged();
+//            arrayList.add(values[0]);
+//            // notify the adapter that the data set has changed. This means that new message received
+//            // from server was added to the list
+//            mAdapter.notifyDataSetChanged();
         }
     }
 }

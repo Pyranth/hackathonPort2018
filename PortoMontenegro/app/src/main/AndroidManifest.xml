@@ -34,6 +34,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity android:name=".RoomControl.MainRoomControl"/>
+
+        <activity android:name=".RoomControlActivity"/>
+
+
+        <activity android:name=".BookRoomActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package portomontenegro.portomontenegro;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity
     ExpandableListView expandableList;
     List<ExpandedMenuModel> listDataHeader;
     HashMap<ExpandedMenuModel, List<String>> listDataChild;
+    ImageView bell_book_a_room;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity
         expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.nav_view) ;
+        bell_book_a_room = findViewById(R.id.book_a_roomID);
+
 
 
         prepareListData();
@@ -76,8 +81,9 @@ public class MainActivity extends AppCompatActivity
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
 
                 FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+
                 if (i == 0) {
-                    fragmentTransaction.replace(R.id.containerView, new HomeFragment()).commit();
+                    startActivity(new Intent(getApplicationContext(), RoomControlActivity.class));
                     mDrawerLayout.closeDrawers();
                     return true;
                 }
@@ -159,4 +165,19 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+
+        bell_book_a_room.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(new Intent(getApplicationContext(), BookRoomActivity.class));
+            }
+        });
+    }
 }

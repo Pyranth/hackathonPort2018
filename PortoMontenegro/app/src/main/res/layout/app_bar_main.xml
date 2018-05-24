@@ -27,6 +27,14 @@
                 android:src="@drawable/porto_logo"
                 android:layout_gravity="center"/>
 
+            <ImageView
+                android:id="@+id/book_a_roomID"
+                android:layout_marginEnd="10dp"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/book_a_room"
+                android:layout_gravity="end"/>
+
         </android.support.v7.widget.Toolbar>
 
 
