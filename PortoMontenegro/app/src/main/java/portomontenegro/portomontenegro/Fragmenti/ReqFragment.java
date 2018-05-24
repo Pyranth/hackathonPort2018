@@ -14,6 +14,13 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -47,7 +54,7 @@ public class ReqFragment extends Fragment
        final Switch svicDoNot = (Switch)rootView.findViewById(R.id.switchDoNot);
        final Switch svicSpa = (Switch)rootView.findViewById(R.id.switchSpa);
        final Switch svicMassage = (Switch)rootView.findViewById(R.id.switchMassage);
-
+             Button btnSend = (Button) rootView.findViewById(R.id.btnSend);
         final TextView txtTest = (TextView)rootView.findViewById(R.id.txtComment);
         svicClean.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -83,6 +90,13 @@ public class ReqFragment extends Fragment
                 } else {
                     txtTest.setText("Radi opet svicMassage");
                 }
+            }
+        });
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
             }
         });
         return rootView;
