@@ -19,7 +19,7 @@ $checkout_date = date("Y-m-d", $time);
 
 $br_kreveta = $_REQUEST['adults'] + $_REQUEST['children'];
 
-echo "<table class=\"table\"><tr><th>Hotel name</th><th>Room type</th>
+echo "<table class=\"table\"><tr class='first_row'><th>Hotel name</th><th>Room type</th>
     <th>Beds</th><th>Price</th></tr>";
 if ($result = $mysqli->query("SELECT * FROM room 
 WHERE BEDS >= " . $br_kreveta . " AND room.ROOMID NOT IN(
@@ -28,7 +28,7 @@ WHERE
 CAST(\"". $checkin_date . "\" AS DATE) BETWEEN OD AND DO
 AND room.ROOMID = reservation.ROOMID)")) {
 	while($row = $result->fetch_array(MYSQL_ASSOC)) {
-        $hotel = $mysqli->query("SELECT HOTELNAME FROM `hotel` WHERE HOTELID=1");
+        $hotel = $mysqli->query("SELECT HOTELNAME FROM `hotel` WHERE HOTELID=" . $row['HOTELID']);
         echo "<tr><td>";
         if ($hotel->num_rows>0){
             while ($row1 = mysqli_fetch_assoc($hotel)){

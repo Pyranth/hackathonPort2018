@@ -62,13 +62,6 @@ session_start();
     </nav>
 
     <!-- Page Content -->
-    <div class="container d-flex h-100">
-      <div class="row justify-content-center align-self-center">
-        <div class="col-lg-12 text-center">
-          <img src="images/porto-montenegro-banner.png" class="img-fluid" alt="Responsive image">
-        </div>
-      </div>
-    </div>
 
     <div id="tabela" class="table-responsive" style="padding: 25px; overflow:hidden; width: 100%; height: 1000px"></div>
     <!-- Bootstrap core JavaScript -->

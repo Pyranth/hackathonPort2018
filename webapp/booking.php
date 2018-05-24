@@ -85,9 +85,11 @@ session_start();
 	position: relative;
 	top: 2px;
 }
-.nesto button.button-big {
+button.button-big {
 	width: 296px;
 	height: 58px;
+	border-radius: 4px;
+	color: #fff;
 }
 /*inputs*/
 .nesto .input-text {
@@ -249,8 +251,6 @@ session_start();
 	height: 90px;
 	position: relative;
 	color: #000000;
-	background-image: url('http://www.montenegro-visit.com/wp-content/uploads/2016/03/porto_montenegro_02.jpg');
-	background-size: shrink-to-fit;
 }
 .nesto .booking .header div {
 	position: absolute;
@@ -381,10 +381,30 @@ session_start();
 	padding-left: 20px;
 	margin-top: 40px;
 }
+.button-big {
+	position: relative;
+	padding-left: 20px;
+	background-color: #00467e;
+	
+}
 .nesto .booking .button-big .icon {
 	background-position: 0 -150px;
 	position: absolute;
 	left: 59px;
+}
+.button-big .icon {
+	background-position: 0 -150px;
+	position: absolute;
+	left: 59px;
+}
+
+table{
+	font-family: "Gotham Book", sans-serif;
+}
+
+.first_row{
+	background-color: #00467e;
+	color: #fff;
 }
 
 	</style>
@@ -466,13 +486,8 @@ session_start();
 		<button class="button-big" id="add_event">Add event</button>
 	</div>
 
-<<<<<<< HEAD
-	<form action="booking-form.php" class="container booking" name="booking" method="post">
-		<div class="header text-center">
-=======
 	<form  class="container booking" name="booking">
 		<div class="header">
->>>>>>> 0bd43d99b58cb16665fd091a874c45b86257949c
 			<div>
 				<h2>Porto Montenegro</h2>
 				<div class="icon"></div>
@@ -492,10 +507,6 @@ session_start();
 				<input type="datetime" name="checkout" value="3 January, 2016" id="checkout" readonly>
 				<div class="icon pop-up"></div>
 			</div>
-<<<<<<< HEAD
-
-=======
->>>>>>> fe7b8c450248aadf3c485933a3a05da63405fa44
 		</div>
 		
 		<ul class="persons">
@@ -530,7 +541,7 @@ session_start();
         </div>
       </div>
     </div>
-    <div id="tabelaBooking" style="width: 600px; height: 700px;position: absolute; left: 600px; top: 80px"></div>
+    <div id="tabelaBooking" style="width: 600px; height: 700px;position: absolute; left: 600px; top: 150px"></div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
