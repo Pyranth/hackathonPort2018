@@ -11,11 +11,22 @@ public class TCPClient  {
     private String serverMessage;
     public static final String SERVERIP = "10.71.7.211"; //your computer IP address
     public static final int SERVERPORT = 80;
+
     private OnMessageReceived mMessageListener = null;
     private boolean mRun = false;
 
+<<<<<<< HEAD
+    private PrintWriter out;
+    private BufferedReader in;
+
+    private class LongOperation extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+=======
     PrintWriter out;
     BufferedReader in;
+>>>>>>> 8b1a60c54ba40e6900b1d05c4ae890359600a559
 
     /**
      *  Constructor of the class. OnMessagedReceived listens for the messages received from server
@@ -186,7 +197,7 @@ public class TCPClient  {
 
     public void stopClient(){
         mRun = false;
-    }
+ 
 
     public void run() {
 
