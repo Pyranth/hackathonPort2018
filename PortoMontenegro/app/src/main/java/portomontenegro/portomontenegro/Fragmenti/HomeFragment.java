@@ -16,6 +16,8 @@ import android.widget.Switch;
 import java.util.ArrayList;
 
 import portomontenegro.portomontenegro.R;
+import portomontenegro.portomontenegro.RoomControl.MainRoomControl;
+import portomontenegro.portomontenegro.RoomControl.MyCustomAdapter;
 import portomontenegro.portomontenegro.RoomControl.TCPClient;
 
 /**
@@ -27,7 +29,7 @@ public class HomeFragment extends Fragment
 //    private ListView mList;
 //    private ArrayList<String> arrayList;
 //    private MyCustomAdapter mAdapter;
-    private TCPClient mTcpClient;
+    static  private TCPClient mTcpClient;
     public HomeFragment(){};
 
     @Override

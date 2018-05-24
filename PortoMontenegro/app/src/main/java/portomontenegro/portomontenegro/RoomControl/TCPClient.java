@@ -13,7 +13,9 @@ public class TCPClient  {
     public static final int SERVERPORT = 80;
     private OnMessageReceived mMessageListener = null;
     private boolean mRun = false;
-        //Imjenjeno NE DIRATI!
+    static Socket socket;
+    static  InetAddress serverAddr;
+
     PrintWriter out;
     BufferedReader in;
     private class LongOperation extends AsyncTask<String, Void, String> {
@@ -240,12 +242,12 @@ public class TCPClient  {
 
         try {
             //here you must put your computer's IP address.
-            InetAddress serverAddr = InetAddress.getByName(SERVERIP);
+             serverAddr = InetAddress.getByName(SERVERIP);
 
             Log.e("TCP Client", "C: Connecting...");
 
             //create a socket to make the connection with the server
-            Socket socket = new Socket(serverAddr, SERVERPORT);
+             socket = new Socket(serverAddr, SERVERPORT);
             try {
 
                 //send the message to the server
@@ -295,4 +297,6 @@ public class TCPClient  {
     public interface OnMessageReceived {
         public void messageReceived(String message);
     }
+
+
 }
