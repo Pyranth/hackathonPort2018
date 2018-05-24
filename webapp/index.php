@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,9 +38,18 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login/login.html">Login</a>
-            </li>
+			<?php if(isset($_SESSION['username'])){
+			echo "<li class=\"nav-item\"> <a class=\"nav-link\" href=\"administration.php\">Administration</a> </li>";
+			} ?>
+			<?php if(isset($_SESSION['username'])){
+			echo "<li class=\"nav-item\"> <a class=\"nav-link\" href=\"analytics.php\">Analytics</a> </li>";
+			} ?>
+			<?php if(!isset($_SESSION['username'])){
+			echo "<li class=\"nav-item\"> <a class=\"nav-link\" href=\"login/login.php\">Login</a> </li>";
+			} ?>
+			<?php if(isset($_SESSION['username'])){
+			echo "<li class=\"nav-item\"> <a class=\"nav-link\" href=\"login/logout.php\">Logout</a> </li>";
+			} ?>
           </ul>
         </div>
       </div>
