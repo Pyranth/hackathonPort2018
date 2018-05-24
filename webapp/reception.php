@@ -1,4 +1,4 @@
-<?php
+    <?php
 session_start();
 ?>
 
@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+      <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <title>Porto Montenegro - Vitual Hotel Assistant</title>
 
     <!-- Bootstrap core CSS -->
@@ -39,13 +39,16 @@ session_start();
               </a>
             </li>
 			<?php if(isset($_SESSION['username'])){
+			echo "<li class=\"nav-item active\"> <a class=\"nav-link\" href=\"booking.php\">Booking</a> </li>";
+			} ?>
+			<?php if(isset($_SESSION['username'])){
+			echo "<li class=\"nav-item active\"> <a class=\"nav-link\" href=\"reception.php\">Reception</a> </li>";
+			} ?>
+			<?php if(isset($_SESSION['username'])){
 			echo "<li class=\"nav-item\"> <a class=\"nav-link\" href=\"administration.php\">Administration</a> </li>";
 			} ?>
 			<?php if(isset($_SESSION['username'])){
 			echo "<li class=\"nav-item\"> <a class=\"nav-link\" href=\"analytics.php\">Analytics</a> </li>";
-			} ?>
-			<?php if(isset($_SESSION['username'])){
-			echo "<li class=\"nav-item active\"> <a class=\"nav-link\" href=\"reception.php\">Reception</a> </li>";
 			} ?>
 			<?php if(!isset($_SESSION['username'])){
 			echo "<li class=\"nav-item\"> <a class=\"nav-link\" href=\"login/login.php\">Login</a> </li>";
@@ -67,9 +70,11 @@ session_start();
       </div>
     </div>
 
+    <div id="tabela" class="table-responsive" style="padding: 25px; overflow:hidden; width: 100%; height: 1000px" onclick="azurirajTabelu()"></div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
   </body>
 
