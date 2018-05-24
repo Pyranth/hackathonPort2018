@@ -108,7 +108,7 @@ public class QRScannerActivity extends AppCompatActivity {
                         public void run() {
                             //Create vibrate
                             Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-                            vibrator.vibrate(1000);
+                            vibrator.vibrate(500);
                             txtResult.setText(qrcodes.valueAt(0).displayValue);
                             startActivity(new Intent(getApplicationContext(), MainActivity.class).putExtra("TYPEOFUSER",true));
 
