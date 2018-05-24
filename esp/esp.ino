@@ -1,15 +1,22 @@
-
 #include <ESP8266WiFi.h>
 
 #define pinOkidac 4 // pin d2
 #define pinDiodaZelena 0 //pin d3
+<<<<<<< HEAD
+#define pinDiodaCrvena 2 //pin d4
+=======
 #define pinDiodaCrvena 14 //pin d4
+>>>>>>> 81da5c7ed4c8bc7e3102c40f8af4b7143c2a6db1
 WiFiClient client;
 WiFiServer server(80);
 const char* ssid = "Hackathon in the Port";
 const char* password = "";
 //const char* ssid = "Sea Point Apartments";
 //const char* password = "biljana123";
+<<<<<<< HEAD
+
+=======
+>>>>>>> 81da5c7ed4c8bc7e3102c40f8af4b7143c2a6db1
 char data;
 
 void setup() {
@@ -27,8 +34,12 @@ void setup() {
 void loop() {
 
   client = server.available();
+<<<<<<< HEAD
+
+=======
         //Serial.println((WiFi.localIP()));
         
+>>>>>>> 81da5c7ed4c8bc7e3102c40f8af4b7143c2a6db1
   while(client.connected()){
     
     if (client.available()>0) { 
