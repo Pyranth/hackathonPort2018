@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import portomontenegro.portomontenegro.Adapteri.ExpandableListAdapter;
+import portomontenegro.portomontenegro.Fragmenti.AboutFragment;
 import portomontenegro.portomontenegro.Fragmenti.HomeFragment;
 import portomontenegro.portomontenegro.Fragmenti.ReqFragment;
 import portomontenegro.portomontenegro.Fragmenti.RoomControlFragment;
@@ -37,13 +38,16 @@ public class MainActivity extends AppCompatActivity
     List<ExpandedMenuModel> listDataHeader;
     HashMap<ExpandedMenuModel, List<String>> listDataChild;
     ImageView bell_book_a_room;
+    boolean gost = true;
     HomeFragment homeFragment = new HomeFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if(!getIntent().getExtras().getBoolean("TYPEOFUSER")){
+            gost=false;
+        }
         expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.nav_view) ;
@@ -81,20 +85,35 @@ public class MainActivity extends AppCompatActivity
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
 
                 FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+                if(gost) {
+                    switch (i) {
+                        case 0:
+                            fragmentTransaction.replace(R.id.containerView, homeFragment).commit();
+                            mDrawerLayout.closeDrawers();
+                            return true;
 
-                if (i == 0) {
-                    fragmentTransaction.replace(R.id.containerView, homeFragment).commit();
-                    mDrawerLayout.closeDrawers();
-                    return true;
-                }
-                else if(i == 1)
-                {
-                    fragmentTransaction.replace(R.id.containerView, new ReqFragment()).commit();
-                    mDrawerLayout.closeDrawers();
-                    return true;
-                }
-                else {
-                    return false;
+                        case 1:
+                            fragmentTransaction.replace(R.id.containerView, new ReqFragment()).commit();
+                            mDrawerLayout.closeDrawers();
+                            return true;
+                        case 2:
+                            fragmentTransaction.replace(R.id.containerView, new AboutFragment()).commit();
+                            mDrawerLayout.closeDrawers();
+                            return true;
+                        default:
+                            return false;
+                    }
+                }else{
+                    switch (i){
+                        case 0: fragmentTransaction.replace(R.id.containerView,new AboutFragment()).commit();
+                            mDrawerLayout.closeDrawers();
+                            return true;
+
+                        case 1: fragmentTransaction.replace(R.id.containerView, new AboutFragment()).commit();
+                            mDrawerLayout.closeDrawers();
+                            return true;
+                        default: return false;
+                    }
                 }
             }
         });
@@ -146,7 +165,7 @@ public class MainActivity extends AppCompatActivity
         listDataChild = new HashMap<>();
 
 
-
+        if(gost){
         ExpandedMenuModel item1 = new ExpandedMenuModel();
         item1.setIconName("Control Room");
 //        item1.setIconImg(R.drawable.nekaslika);
@@ -156,6 +175,20 @@ public class MainActivity extends AppCompatActivity
         item2.setIconName("Requests");
 //        item1.setIconImg(R.drawable.nekaslika);
         listDataHeader.add(item2);
+
+        ExpandedMenuModel item3 = new ExpandedMenuModel();
+        item3.setIconName("About");
+//        item1.setIconImg(R.drawable.nekaslika);
+        listDataHeader.add(item3);
+        }else{
+            ExpandedMenuModel item1 = new ExpandedMenuModel();
+            item1.setIconName("Home");
+            listDataHeader.add(item1);
+
+            ExpandedMenuModel item2 = new ExpandedMenuModel();
+            item2.setIconName("About");
+            listDataHeader.add(item2);
+            }
 
         // Adding child data
 //        List<String> heading1 = new ArrayList<String>();

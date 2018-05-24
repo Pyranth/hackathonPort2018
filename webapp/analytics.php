@@ -24,6 +24,7 @@ session_start();
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+	  google.charts.setOnLoadCallback(drawChart2);
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -66,8 +67,60 @@ session_start();
 				}
 			}
         };
+		
+		
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+		['Nuber of days passed', 'Number of users'],
+		[0,	5528],
+		[1,	4298],
+		[2,	2001],
+		[3,	1208],
+		[4,	918],
+		[5,	700],
+		[6,	557],
+		[7,	504],
+		[8,	428],
+		[9,	324],
+		[10,	276],
+		[11,	226],
+		[12,	191],
+		[13,	183],
+		[14,	199],
+		[15,	141],
+		[16,	151],
+		[17,	138],
+		[18,	96],
+		[19,	102],
+		[20,	95]
+		]);
+		
+        var options = {
+          title: 'Days between registration and first booking',
+          curveType: 'function',
+          legend: { 
+			position: 'bottom'
+		   },
+		  vAxis: {
+			title: 'Number of days between registration and first booking'
+		  },
+		  hAxis: { 
+			title: 'Number of users',
+			textStyle: {
+				fontSize: 16
+				}
+			}
+        };
+		
+		
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
 
         chart.draw(data, options);
       }
@@ -123,7 +176,7 @@ session_start();
     </div>
 	<div class="container">
       <div class="row">
-		<div id="curve_chart" class="col-lg-12" style="min-height:500px" ></div>
+		<div id="curve_chart2" class="col-lg-12" style="min-height:500px" ></div>
       </div>
     </div>
 

@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="portomontenegro.portomontenegro">
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -36,6 +37,8 @@
         <activity android:name=".RoomControl.MainRoomControl"/>
 
         <activity android:name=".RoomControlActivity"/>
+        <activity android:name=".QRScannerActivity"/>
+
 
 
         <activity android:name=".BookRoomActivity"
