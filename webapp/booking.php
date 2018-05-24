@@ -250,10 +250,12 @@ session_start();
 	height: 90px;
 	position: relative;
 	color: #000000;
+	background-image: url('http://www.montenegro-visit.com/wp-content/uploads/2016/03/porto_montenegro_02.jpg');
+	background-size: shrink-to-fit;
 }
 .nesto .booking .header div {
 	position: absolute;
-	left: 22px;
+	left: 60px;
 	top: 30px;
 }
 .nesto .booking .header h2 {
@@ -466,7 +468,7 @@ session_start();
 	</div>
 
 	<form action="booking-form.php" class="container booking" name="booking" method="post">
-		<div class="header">
+		<div class="header text-center">
 			<div>
 				<h2>Porto Montenegro</h2>
 				<div class="icon"></div>
