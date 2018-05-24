@@ -11,12 +11,15 @@ public class TCPClient  {
     private String serverMessage;
     public static final String SERVERIP = "192.168.1.8"; //your computer IP address
     public static final int SERVERPORT = 80;
+
     private OnMessageReceived mMessageListener = null;
     private boolean mRun = false;
 
-    PrintWriter out;
-    BufferedReader in;
+    private PrintWriter out;
+    private BufferedReader in;
+
     private class LongOperation extends AsyncTask<String, Void, String> {
+
         @Override
         protected String doInBackground(String... params) {
 
