@@ -26,7 +26,6 @@ session_start();
 	outline: none;
 }
 .nesto {
-	background-color: #d9d9d9;
 	font-size: 14px;
 	font-family: "Gotham Book", sans-serif;
 }
@@ -50,7 +49,6 @@ session_start();
 	background-color: #fff;
 	overflow: hidden;
 	border-radius: 4px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.2), 0 2px 3px rgba(0,0,0,0.4);
 }
 .nesto .container .icon {
 	background-image: url('https://res.cloudinary.com/dw369yzsh/image/upload/v1483213851/icons_wykol9.png');
@@ -65,8 +63,8 @@ session_start();
 .nesto .container button {
 	text-transform: uppercase;
 	border: none;
-	background-color: #fb6362;
-	color: #fff;
+	background-color: #00467e;
+	color: #ffffff;
 	margin: 0 auto;
 	display: block;
 	box-shadow: 0 3px 5px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.8);
@@ -277,6 +275,10 @@ session_start();
 	width: 296px;
 	margin: 26px auto 0 auto;
 }
+
+.persons{
+	padding: 0;
+}
 .nesto .booking label:not(.checkbox) {
 	display: block;
 }
@@ -340,6 +342,11 @@ session_start();
 	padding: 0;
 	margin-top: 9px;
 }
+
+.persons .input-text{
+	width: 115px !important;
+}
+
 .nesto .booking .persons select {
 	font-size: 14px;
 	width: 100%;
@@ -478,12 +485,6 @@ session_start();
 			<div class="input-text">
 				<input type="datetime" name="checkout" value="3 January, 2016" id="checkout" readonly>
 				<div class="icon pop-up"></div>
-			</div>
-
-			<div class="div-chck">
-				<input type="checkbox" id="check">
-				<div class="icon input-text"></div>
-				<label for="check" class="checkbox">Flexible dates</label>
 			</div>
 		</div>
 		
