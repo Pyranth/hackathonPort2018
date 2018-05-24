@@ -52,11 +52,36 @@ public class ReqFragment extends Fragment
         svicClean.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (svicClean.isChecked()) {
-                    txtTest.setText("Radi");
-                    Log.i("Radi", "onClick: jdiaojdiasjda");
+                    txtTest.setText("Radi Clean");
                 } else {
-                    txtTest.setText("Radi opet");
-                    Log.i("Radi", "onClick: jdiaojdiasjda");
+                    txtTest.setText("Radi opet Clean");
+                }
+            }
+        });
+        svicDoNot.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (svicDoNot.isChecked()) {
+                    txtTest.setText("Radi DoNot");
+                } else {
+                    txtTest.setText("Radi opet DoNot");
+                }
+            }
+        });
+        svicSpa.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (svicSpa.isChecked()) {
+                    txtTest.setText("Radi svicSpa");
+                } else {
+                    txtTest.setText("Radi opet svicSpa");
+                }
+            }
+        });
+        svicMassage.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (svicMassage.isChecked()) {
+                    txtTest.setText("Radi svicMassage");
+                } else {
+                    txtTest.setText("Radi opet svicMassage");
                 }
             }
         });
