@@ -41,7 +41,7 @@ public class TCPClient  {
      */
 
     public void sendMessage(char c){
-        try {
+       try {
             Thread worker;
             if (c == 'b') {
                 worker = new Thread(new Runnable() {
@@ -78,17 +78,7 @@ public class TCPClient  {
                 worker = new Thread(new Runnable() {
 
                     private void updateUI() {
-             /*   if(worker.isInterrupted()){
-                    return;
-                }
-                runOnUiThread(new Runnable(){
 
-                    @Override
-                    public void run()
-                    {
-                        // Update view and remove loading spinner etc...
-                    }
-                });*/
                     }
 
                     private void send() {
