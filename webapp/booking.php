@@ -427,7 +427,7 @@ session_start();
 	<div class="container calendar">
 		<div class="header">
 			<div class="icon arr prev"></div>
-			<div class="month">May 2014</div>
+			<div class="month">May 2016</div>
 			<div class="icon arr next"></div>
 		</div>
 		<table>
@@ -455,8 +455,7 @@ session_start();
 		<button class="button-big" id="add_event">Add event</button>
 	</div>
 
-
-	<form action="" class="container booking" name="booking">
+	<form action="booking-form.php" class="container booking" name="booking" method="post">
 		<div class="header">
 			<div>
 				<h2>Porto Montenegro</h2>
@@ -468,13 +467,13 @@ session_start();
 		<div class="dates" data-type="none">
 			<label for="checkin">Check in</label>
 			<div class="input-text">
-				<input type="datetime" value="9 July, 2016" id="checkin" readonly>
+				<input type="datetime" name="checkin" value="1 January, 2018" id="checkin" readonly>
 				<div class="icon pop-up"></div>
 			</div>
 
 			<label for="checkout">Check out</label>
 			<div class="input-text">
-				<input type="datetime" value="16 July, 2016" id="checkout" readonly>
+				<input type="datetime" name="checkout" value="3 January, 2016" id="checkout" readonly>
 				<div class="icon pop-up"></div>
 			</div>
 
@@ -513,7 +512,7 @@ session_start();
 			</li>
 		</ul>
 
-		<button class="button-big" id="search"><div class="icon"></div>Search rooms</button>
+		<button type="submit" class="button-big" id="search"><div class="icon"></div>Search rooms</button>
 	</form>
         </div>
       </div>
@@ -550,7 +549,7 @@ $('#add_event').on('click', function(){
 
 $('#search').on('click', function(e){
 	$('.booking').addClass('is-sent');
-	e.preventDefault();
+	//e.preventDefault();
 });
 });	
 	</script>
