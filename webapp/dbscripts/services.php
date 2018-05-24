@@ -1,7 +1,9 @@
 <?php
+
 require_once 'config.php';
+
 $myArray = array();
-if ($result = $mysqli->query("SELECT * FROM reservation")) {
+if ($result = $mysqli->query("SELECT * FROM services")) {
 
     while($row = $result->fetch_array(MYSQL_ASSOC)) {
             $myArray[] = $row;
