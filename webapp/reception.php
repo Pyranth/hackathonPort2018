@@ -70,7 +70,7 @@ session_start();
       </div>
     </div>
 
-    <div id="tabela" class="table-responsive" style="padding: 25px; overflow:hidden; width: 100%; height: 1000px" onclick="azurirajTabelu()"></div>
+    <div id="tabela" class="table-responsive" style="padding: 25px; overflow:hidden; width: 100%; height: 1000px"></div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

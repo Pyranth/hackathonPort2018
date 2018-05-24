@@ -1,7 +1,11 @@
 <?php
+<<<<<<< HEAD
+require_once "dbscripts\config.php";
+=======
 
 require_once 'dbscripts/config.php';
 
+>>>>>>> fe7b8c450248aadf3c485933a3a05da63405fa44
 if(isset($_REQUEST['req'])) {
     $connection = $mysqli;
 
