@@ -229,7 +229,7 @@ session_start();
 
 .nesto .booking {
 	width: 346px;
-	height: 626px;
+	height: 426px;
 }
 .nesto .is-sent{
 	animation: launch 1s ease-in-out forwards
@@ -508,9 +508,8 @@ session_start();
 				</div>
 			</li>
 		</ul>
-        <input type="submit" value="Search rooms">
-        <button onclick="azurirajTabeluBooking();" class="button-big"><div class="icon"></div>Search rooms</button>
 	</form>
+    <button onclick="azurirajTabeluBooking();" class="button-big"><div class="icon"></div>Search rooms</button>
         </div>
       </div>
     </div>

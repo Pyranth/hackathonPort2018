@@ -2,7 +2,6 @@
 function azurirajTabeluBooking() {
 
     var xhr = false;
-
     if(window.XMLHttpRequest)
         xhr = new XMLHttpRequest();
     else
@@ -14,7 +13,6 @@ function azurirajTabeluBooking() {
     xhr.onreadystatechange = function () {
         if(this.readyState == 4 && this.status == 200)
         {
-            alert(this.responseText);
             ucitajTabelu(this.responseText);
         }
     };
