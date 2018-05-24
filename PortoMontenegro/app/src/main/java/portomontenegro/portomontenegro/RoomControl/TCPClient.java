@@ -9,41 +9,14 @@ import android.os.AsyncTask;
 public class TCPClient  {
 
     private String serverMessage;
-    public static final String SERVERIP = "192.168.1.8"; //your computer IP address
+    public static final String SERVERIP = "10.71.7.211"; //your computer IP address
     public static final int SERVERPORT = 80;
     private OnMessageReceived mMessageListener = null;
     private boolean mRun = false;
 
     PrintWriter out;
     BufferedReader in;
-    private class LongOperation extends AsyncTask<String, Void, String> {
-        @Override
-        protected String doInBackground(String... params) {
 
-            try {
-                if (out != null && !out.checkError()) {
-                    out.println("zON");
-                    out.flush();
-                    Log.i("Radi", "Radi");
-                }
-            }catch (Exception e){
-
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-        }
-
-        @Override
-        protected void onPreExecute() {
-        }
-
-        @Override
-        protected void onProgressUpdate(Void... values) {
-        }
-    }
     /**
      *  Constructor of the class. OnMessagedReceived listens for the messages received from server
      */
@@ -57,13 +30,12 @@ public class TCPClient  {
      */
 
     public void sendMessage(char c){
-        Thread worker;
-        if(c == 'b')
-        {
-            worker = new Thread(new Runnable(){
+        try {
+            Thread worker;
+            if (c == 'b') {
+                worker = new Thread(new Runnable() {
 
-                private void updateUI()
-                {
+                    private void updateUI() {
              /*   if(worker.isInterrupted()){
                     return;
                 }
@@ -75,28 +47,26 @@ public class TCPClient  {
                         // Update view and remove loading spinner etc...
                     }
                 });*/
-                }
+                    }
 
-                private void send()
-                {
-                    out.print('b');
-                    out.flush();
+                    private void send() {
+                        out.print('b');
+                        out.flush();
 
-                }
+                    }
 
-                @Override
-                public void run()
-                {
-                    Log.d("Radi", "Thread run()");
-                    send();
-                }
+                    @Override
+                    public void run() {
+                        Log.d("Radi", "Thread run()");
+                        send();
+                    }
 
-            });
-            worker.start();
-        }else if(c == 'Z') {
-            worker = new Thread(new Runnable() {
+                });
+                worker.start();
+            } else if (c == 'Z') {
+                worker = new Thread(new Runnable() {
 
-                private void updateUI() {
+                    private void updateUI() {
              /*   if(worker.isInterrupted()){
                     return;
                 }
@@ -108,27 +78,26 @@ public class TCPClient  {
                         // Update view and remove loading spinner etc...
                     }
                 });*/
-                }
+                    }
 
-                private void send() {
-                    out.print('Z');
-                    out.flush();
+                    private void send() {
+                        out.print('Z');
+                        out.flush();
 
-                }
+                    }
 
-                @Override
-                public void run() {
-                    Log.d("Radi", "Thread run()");
-                    send();
-                }
+                    @Override
+                    public void run() {
+                        Log.d("Radi", "Thread run()");
+                        send();
+                    }
 
-            });
-            worker.start();
-        }else if(c == 'z'){
-            worker = new Thread(new Runnable(){
+                });
+                worker.start();
+            } else if (c == 'z') {
+                worker = new Thread(new Runnable() {
 
-                private void updateUI()
-                {
+                    private void updateUI() {
              /*   if(worker.isInterrupted()){
                     return;
                 }
@@ -140,29 +109,26 @@ public class TCPClient  {
                         // Update view and remove loading spinner etc...
                     }
                 });*/
-                }
+                    }
 
-                private void send()
-                {
-                    out.print('z');
-                    out.flush();
+                    private void send() {
+                        out.print('z');
+                        out.flush();
 
-                }
+                    }
 
-                @Override
-                public void run()
-                {
-                    Log.d("Radi", "Thread run()");
-                    send();
-                }
+                    @Override
+                    public void run() {
+                        Log.d("Radi", "Thread run()");
+                        send();
+                    }
 
-            });
-            worker.start();
-        }else if (c == 'C'){
-            worker = new Thread(new Runnable(){
+                });
+                worker.start();
+            } else if (c == 'C') {
+                worker = new Thread(new Runnable() {
 
-                private void updateUI()
-                {
+                    private void updateUI() {
              /*   if(worker.isInterrupted()){
                     return;
                 }
@@ -174,29 +140,26 @@ public class TCPClient  {
                         // Update view and remove loading spinner etc...
                     }
                 });*/
-                }
+                    }
 
-                private void send()
-                {
-                    out.print('C');
-                    out.flush();
+                    private void send() {
+                        out.print('C');
+                        out.flush();
 
-                }
+                    }
 
-                @Override
-                public void run()
-                {
-                    Log.d("Radi", "Thread run()");
-                    send();
-                }
+                    @Override
+                    public void run() {
+                        Log.d("Radi", "Thread run()");
+                        send();
+                    }
 
-            });
-            worker.start();
-        }else if(c == 'c'){
-            worker = new Thread(new Runnable(){
+                });
+                worker.start();
+            } else if (c == 'c') {
+                worker = new Thread(new Runnable() {
 
-                private void updateUI()
-                {
+                    private void updateUI() {
              /*   if(worker.isInterrupted()){
                     return;
                 }
@@ -208,24 +171,25 @@ public class TCPClient  {
                         // Update view and remove loading spinner etc...
                     }
                 });*/
-                }
+                    }
 
-                private void send()
-                {
-                    out.print('c');
-                    out.flush();
+                    private void send() {
+                        out.print('c');
+                        out.flush();
 
-                }
+                    }
 
-                @Override
-                public void run()
-                {
-                    Log.d("Radi", "Thread run()");
-                    send();
-                }
+                    @Override
+                    public void run() {
+                        Log.d("Radi", "Thread run()");
+                        send();
+                    }
 
-            });
-            worker.start();
+                });
+                worker.start();
+            }
+        }catch (Exception e){
+
         }
 
     }
