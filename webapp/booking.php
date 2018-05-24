@@ -4,7 +4,6 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -458,7 +457,7 @@ session_start();
 		<button class="button-big" id="add_event">Add event</button>
 	</div>
 
-	<form action="booking-form.php" class="container booking" name="booking" method="post">
+	<form  class="container booking" name="booking">
 		<div class="header">
 			<div>
 				<h2>Porto Montenegro</h2>
@@ -470,7 +469,7 @@ session_start();
 		<div class="dates" data-type="none">
 			<label for="checkin">Check in</label>
 			<div class="input-text">
-				<input type="datetime" name="checkin" value="1 January, 2018" id="checkin" readonly>
+				<input type="datetime" name="checking" value="1 January, 2018" id="checking" readonly>
 				<div class="icon pop-up"></div>
 			</div>
 
@@ -480,11 +479,6 @@ session_start();
 				<div class="icon pop-up"></div>
 			</div>
 
-			<div class="div-chck">
-				<input type="checkbox" id="check">
-				<div class="icon input-text"></div>
-				<label for="check" class="checkbox">Flexible dates</label>
-			</div>
 		</div>
 		
 		<ul class="persons">
@@ -514,49 +508,47 @@ session_start();
 				</div>
 			</li>
 		</ul>
-
-		<button type="submit" class="button-big" id="search"><div class="icon"></div>Search rooms</button>
+        <input type="submit" value="Search rooms">
+        <button onclick="azurirajTabeluBooking();" class="button-big"><div class="icon"></div>Search rooms</button>
 	</form>
         </div>
       </div>
     </div>
+    <div id="tabelaBooking" style="width: 600px; height: 700px;position: absolute; left: 600px; top: 80px"></div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
+    <script src="scriptNew.js"></script>
+
 	<script>
-		$(document).ready(function(){
- $('.pop-up').on('click', function(){
- 	$('#overlay').fadeIn(300); 
- 	$('.calendar').fadeIn(300); 
- 	let clickedbutton = $("input",$(this).parent()).attr('id');
- 	$('.dates').data('type',clickedbutton);
- });
- 
- $('table').on('click', function(event){
-   let that=$(event.target);
-    if(that.is('td') && !that.hasClass('notCurMonth') && !that.hasClass('holiday') && !that.hasClass('curDay')){
-    	$('td.curDay').toggleClass('curDay');
-    	that.toggleClass('curDay');
-    }
-}); 
+        $(document).ready(function(){
+            $('.pop-up').on('click', function(){
+                $('#overlay').fadeIn(300);
+                $('.calendar').fadeIn(300);
+                let clickedbutton = $("input",$(this).parent()).attr('id');
+                $('.dates').data('type',clickedbutton);
+            });
 
-$('#add_event').on('click', function(){
-	let value= $('td.curDay').html();
-    $('#overlay').fadeOut(300);
- 	$('.calendar').fadeOut(300);
- 	let id=($('.dates').data()).type;
- 	$('#' + id).val(value+" May, 2014");
-}); 
+            $('table').on('click', function(event){
+                let that=$(event.target);
+                if(that.is('td') && !that.hasClass('notCurMonth') && !that.hasClass('holiday') && !that.hasClass('curDay')){
+                    $('td.curDay').toggleClass('curDay');
+                    that.toggleClass('curDay');
+                }
+            });
 
-$('#search').on('click', function(e){
-	$('.booking').addClass('is-sent');
-	//e.preventDefault();
-});
-});	
-	</script>
+            $('#add_event').on('click', function(){
+                let value= $('td.curDay').html();
+                $('#overlay').fadeOut(300);
+                $('.calendar').fadeOut(300);
+                let id=($('.dates').data()).type;
+                $('#' + id).val(value+" May, 2014");
+            });
 
+
+        });
+    </script>
   </body>
 
 </html>

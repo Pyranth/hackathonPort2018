@@ -1,6 +1,7 @@
 <?php
+require_once "dbscripts\config.php";
 if(isset($_REQUEST['req'])) {
-    $connection = new mysqli("localhost", "root", "", "hackathon");
+    $connection = $mysqli;
 
     $result = $connection->query("SELECT requirements.REQID, guest.NAME, guest.SURNAME,requirements.`Clean Room`,requirements.`Do Not Disturb`,
     requirements.Spa,requirements.Massage,requirements.`Special Req`
