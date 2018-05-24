@@ -20,6 +20,7 @@ import java.util.List;
 
 import portomontenegro.portomontenegro.Adapteri.ExpandableListAdapter;
 import portomontenegro.portomontenegro.Fragmenti.HomeFragment;
+import portomontenegro.portomontenegro.Fragmenti.ReqFragment;
 import portomontenegro.portomontenegro.Fragmenti.RoomControlFragment;
 import portomontenegro.portomontenegro.Fragmenti.TabFragment;
 import portomontenegro.portomontenegro.Models.ExpandedMenuModel;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else if(i == 1)
                 {
-                    fragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+                    fragmentTransaction.replace(R.id.containerView, new ReqFragment()).commit();
                     mDrawerLayout.closeDrawers();
                     return true;
                 }

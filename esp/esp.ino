@@ -3,12 +3,13 @@
 
 #define pinOkidac 4 // pin d2
 #define pinDiodaZelena 0 //pin d3
-#define pinDiodaCrvena 2 //pin d3
+#define pinDiodaCrvena 2 //pin d4
 WiFiClient client;
 WiFiServer server(80);
-
-const char* ssid = "Sea Point Apartments";
-const char* password = "biljana123";
+const char* ssid = "Hackathon in the Port";
+const char* password = "";
+//const char* ssid = "Sea Point Apartments";
+//const char* password = "biljana123";
 char data;
 
 void setup() {
@@ -27,8 +28,9 @@ void loop() {
 
   client = server.available();
         //Serial.println((WiFi.localIP()));
-
+        
   while(client.connected()){
+    Serial.println("KONEKTOVANOOOO");
     if (client.available()>0) { 
       
       data=client.read();

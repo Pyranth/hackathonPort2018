@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment
         // connect to the server
         new connectTask().execute("");
 
-
+    try {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,11 +71,10 @@ public class HomeFragment extends Fragment
 
         svicZeleni.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(svicZeleni.isChecked()){
+                if (svicZeleni.isChecked()) {
                     mTcpClient.sendMessage('Z');
                     Log.i("Radi", "onClick: jdiaojdiasjda");
-                }
-                else{
+                } else {
                     mTcpClient.sendMessage('z');
                     Log.i("Radi", "onClick: jdiaojdiasjda");
                 }
@@ -83,15 +82,17 @@ public class HomeFragment extends Fragment
         });
         svicCrveni.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(svicCrveni.isChecked()){
+                if (svicCrveni.isChecked()) {
                     mTcpClient.sendMessage('C');
-                }
-                else{
+                } else {
                     mTcpClient.sendMessage('c');
 
                 }
             }
         });
+    }catch (Exception e){
+
+    }
         return rootView;
     }
 
