@@ -83,5 +83,5 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:background="#51f47a"
-        android:text="Send" />
+        android:text="Unlock" />
 </LinearLayout>

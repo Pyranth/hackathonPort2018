@@ -16,8 +16,6 @@ import android.widget.Switch;
 import java.util.ArrayList;
 
 import portomontenegro.portomontenegro.R;
-import portomontenegro.portomontenegro.RoomControl.MainRoomControl;
-import portomontenegro.portomontenegro.RoomControl.MyCustomAdapter;
 import portomontenegro.portomontenegro.RoomControl.TCPClient;
 
 /**
