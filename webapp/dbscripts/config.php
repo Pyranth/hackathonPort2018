@@ -6,7 +6,7 @@
 
     server with default setting (user 'root' with no password) */
 
-    define('DB_SERVER', '192.168.1.61');
+    define('DB_SERVER', '10.71.9.138');
 
     define('DB_USERNAME', 'monty');
 

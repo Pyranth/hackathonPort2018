@@ -117,8 +117,6 @@ session_start();
 				}
 			}
         };
-		
-		
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
 

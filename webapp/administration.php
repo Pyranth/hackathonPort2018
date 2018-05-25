@@ -1,5 +1,34 @@
 <?php
 session_start();
+
+if (isset($_SESSION['username']))
+{
+	require_once 'dbscripts/config.php';
+	
+	$db = $mysqli;
+
+	if ($db->connect_error){
+		die("error");
+	}
+
+	$query = $db->query('DESCRIBE `hotel`');
+	$fields_hotel = array();
+	while($row = $query->fetch_assoc()) {
+		$fields_hotel[] = $row['Field'];
+	}
+	
+	$query = $db->query('DESCRIBE `room`');
+	$fields_room = array();
+	while($row = $query->fetch_assoc()) {
+		$fields_room[] = $row['Field'];
+	}
+	
+	$query = $db->query('DESCRIBE `services`');
+	$fields_service = array();
+	while($row = $query->fetch_assoc()) {
+		$fields_service[] = $row['Field'];
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,10 +91,58 @@ session_start();
     </nav>
 
     <!-- Page Content -->
-    <div class="container d-flex h-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <form id="generate-form" type="POST">
+			<?php foreach($fields_hotel as $field): ?>
+				<?php 
+				if ($field == "HOTELID")
+						continue;
+				echo "<label>";
+				if ($field == "HOTELNAME"){
+					echo "<span>Hotel name: </span>"; 
+				}
+				echo "<input type=\"text\" name=\"" . $field . " />";
+					
+				echo "</label><br/>";
+				?>
+			<?php endforeach; ?>
+			<input type="submit" name="submit" />
+			</form>
+        </div>
+      </div>
+    </div>
+	
+	<div class="container">
       <div class="row justify-content-center align-self-center">
         <div class="col-lg-12 text-center">
-          <img src="images/porto-montenegro-banner.png" class="img-fluid" alt="Responsive image">
+          <form id="generate-form" type="POST">
+			<?php foreach($fields_room as $field): ?>
+				<label>
+					<?php echo "$field: "; ?>
+					<input type="text" name="<?php echo $field; ?>" />
+				</label><br/>
+			<?php endforeach; ?>
+			<input type="submit" name="submit" />
+			</form>
+        </div>
+      </div>
+    </div>
+	
+	<div class="container">
+      <div class="row justify-content-center align-self-center">
+        <div class="col-lg-12 text-center">
+          <form id="generate-form" type="POST">
+			<?php foreach($fields_service as $field): ?>
+				<label>
+					<?php
+					echo "$field: "; ?>
+					<input type="text" name="<?php echo $field; ?>" />
+				</label><br/>
+			<?php endforeach; ?>
+			<input type="submit" name="submit" />
+			</form>
         </div>
       </div>
     </div>
