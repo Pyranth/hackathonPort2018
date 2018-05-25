@@ -73,8 +73,8 @@ $query .= ");";
 
 $link->query($query);
 if($query)
-	 return "Success";
+	 echo "Success";
  else
-	 return "Faliture";
+	 echo "Faliture";
 
 ?>
