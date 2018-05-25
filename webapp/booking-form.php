@@ -1,4 +1,4 @@
-<?php
+s<?php
 require_once "dbscripts\config.php";
 
 if(isset($_REQUEST['checking'])){
