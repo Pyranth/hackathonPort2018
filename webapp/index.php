@@ -13,7 +13,7 @@ session_start();
     <meta name="author" content="">
 
     <title>Porto Montenegro - Vitual Hotel Assistant</title>
-
+      <link rel="shourtcut icon" type="image/png" href="images/logo.png"/>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -23,7 +23,6 @@ session_start();
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar transparent navbar-expand-lg navbar-inverse fixed-top">
       <div class="container navbar-inner">

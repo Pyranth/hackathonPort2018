@@ -42,7 +42,7 @@ if (isset($_SESSION['username']))
     <meta name="author" content="">
 
     <title>Porto Montenegro - Vitual Hotel Assistant</title>
-
+      <link rel="shourtcut icon" type="image/png" href="images/logo.png"/>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

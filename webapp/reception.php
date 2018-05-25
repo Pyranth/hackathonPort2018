@@ -13,7 +13,7 @@ session_start();
     <meta name="author" content="">
       <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <title>Porto Montenegro - Vitual Hotel Assistant</title>
-
+      <link rel="shourtcut icon" type="image/png" href="images/logo.png"/>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,7 +35,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>

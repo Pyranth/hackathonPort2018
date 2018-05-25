@@ -158,7 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Porto Montenegro - Vitual Hotel Assistant</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -166,7 +166,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Custom styles -->
 	<link href="../styles/default.css" rel="stylesheet">
     <link href="login-style.css" rel="stylesheet">
-
+      <link rel="shourtcut icon" type="image/png" href="D:\wamp64\www\hackathonPort2018\webapp\images\logo.PNG"/>
   </head>
 
   <body>
