@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -24,7 +26,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import portomontenegro.portomontenegro.Interfaces.APIservisi;
+import portomontenegro.portomontenegro.Models.QueriesModel;
 import portomontenegro.portomontenegro.R;
+import portomontenegro.portomontenegro.RetrofitPoziv.RetrofitCall;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by user on 23.5.2018..
@@ -34,6 +42,10 @@ public class ReqFragment extends Fragment
 {
 
     public ReqFragment(){};
+    private Call<String> call;
+    protected APIservisi api =  RetrofitCall.getApi();
+    EditText message;
+    boolean cleanBool, noNotBool, spaBool, massageBool;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
@@ -46,45 +58,51 @@ public class ReqFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.req_layout, container, false);
+
        final Switch svicClean = (Switch)rootView.findViewById(R.id.switchCleanRoom);
        final Switch svicDoNot = (Switch)rootView.findViewById(R.id.switchDoNot);
        final Switch svicSpa = (Switch)rootView.findViewById(R.id.switchSpa);
        final Switch svicMassage = (Switch)rootView.findViewById(R.id.switchMassage);
              Button btnSend = (Button) rootView.findViewById(R.id.btnSend);
-        final TextView txtTest = (TextView)rootView.findViewById(R.id.txtComment);
+            message = rootView.findViewById(R.id.txtComment);
+
+
         svicClean.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (svicClean.isChecked()) {
-                    txtTest.setText("Radi Clean");
+                    cleanBool = true;
                 } else {
-                    txtTest.setText("Radi opet Clean");
+                    cleanBool = false;
+
                 }
             }
         });
         svicDoNot.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (svicDoNot.isChecked()) {
-                    txtTest.setText("Radi DoNot");
+                    noNotBool= true;
                 } else {
-                    txtTest.setText("Radi opet DoNot");
+                    noNotBool= false;
+
                 }
             }
         });
         svicSpa.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (svicSpa.isChecked()) {
-                    txtTest.setText("Radi svicSpa");
+                   spaBool = true;
                 } else {
-                    txtTest.setText("Radi opet svicSpa");
+                    spaBool = false;
                 }
             }
         });
         svicMassage.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (svicMassage.isChecked()) {
-                    txtTest.setText("Radi svicMassage");
+                    massageBool = true;
                 } else {
-                    txtTest.setText("Radi opet svicMassage");
+                    massageBool = false;
+
                 }
             }
         });
@@ -92,6 +110,29 @@ public class ReqFragment extends Fragment
             @Override
             public void onClick(View view) {
 
+                call = api.setQuery(message.getText().toString()
+                        , massageBool
+                        , spaBool
+                        , noNotBool
+                        , cleanBool);
+
+                call.enqueue(new Callback<String>()
+                {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response)
+                    {
+                        if(response.isSuccessful())
+                        {
+                            Toast.makeText(getContext(), "Proslo", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t)
+                    {
+
+                    }
+                });
 
 
             }

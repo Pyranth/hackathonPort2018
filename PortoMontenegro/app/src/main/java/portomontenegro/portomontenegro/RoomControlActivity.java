@@ -12,7 +12,13 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import java.util.List;
+
+import portomontenegro.portomontenegro.Interfaces.APIservisi;
+import portomontenegro.portomontenegro.Models.QueriesModel;
+import portomontenegro.portomontenegro.RetrofitPoziv.RetrofitCall;
 import portomontenegro.portomontenegro.RoomControl.TCPClient;
+import retrofit2.Call;
 
 /**
  * Created by user on 24.5.2018..
@@ -21,6 +27,7 @@ import portomontenegro.portomontenegro.RoomControl.TCPClient;
 public class RoomControlActivity extends AppCompatActivity
 {
     private TCPClient mTcpClient;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
@@ -31,6 +38,7 @@ public class RoomControlActivity extends AppCompatActivity
         final Switch svicZeleni = (Switch) findViewById(R.id.switchZelena);
         final Switch svicCrveni = (Switch) findViewById(R.id.switchCrvena);
         Button test = (Button) findViewById(R.id.btnUnlock);
+
 
 //        mAdapter = new MyCustomAdapter(getContext(), arrayList);
 //        mList.setAdapter(mAdapter);
