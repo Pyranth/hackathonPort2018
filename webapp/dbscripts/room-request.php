@@ -72,7 +72,9 @@ if (isset($_GET['message']))
 $query .= ");";
 
 $link->query($query);
-if($link)
-	echo 'Success';
+if($query)
+	 return "Success";
+ else
+	 return "Faliture";
 
 ?>
