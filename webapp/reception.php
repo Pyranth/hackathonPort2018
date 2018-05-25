@@ -63,7 +63,7 @@ session_start();
 
     <!-- Page Content -->
 
-    <div id="tabela" class="table-responsive" style="padding: 25px; overflow:hidden; width: 100%; height: 1000px"></div>
+    <div id="tabela" class="table-responsive" style="padding: 25px; overflow:hidden; width: 100%; height: 1500px"></div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

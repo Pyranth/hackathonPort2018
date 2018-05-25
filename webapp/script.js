@@ -16,7 +16,7 @@ function azurirajTabelu() {
     xhr.send();
 }
 
-setInterval(azurirajTabelu,1000);
+setInterval(azurirajTabelu,10000);
 
 
 
