@@ -162,28 +162,23 @@ button {
       <div class="row">
         <div class="col-lg-12 text-center">
 			<form method="post">
+                <div>
+                    <label for="name" class="form-control">Room<input type="email" id="mail" name="user_email" class="form-control"></label>
+                </div>
 			  <div>
-				<label for="name">Room name:</label>
-				<input type="text" id="name" name="user_name">
+				<label for="mail" class="form-control">Hotel<input type="email" id="mail" name="user_email" class="form-control"></label>
 			  </div>
 
 			  <div>
-				<label for="mail">Hotel:</label>
-				<input type="email" id="mail" name="user_email">
-			  </div>
-
-			  <div>
-				<label for="msg">Beds:</label>
-				<input type="email" id="mail" name="user_email">
+				<label for="msg" class="form-control">Beds<input type="text" id="mail" name="user_email" class="form-control"></label>
 			  </div>
 			  
 			  <div>
-				<label for="msg">Price:</label>
-				<input type="email" id="mail" name="user_email">
+				<label for="msg" class="form-control">Price<input type="text" id="mail" name="user_email" class="form-control"></label>
 			  </div>
 			 
 			  <div class="button">
-				<button type="submit">Insert</button>
+				<button type="submit" class="form-control form-control">Insert room</button>
 			  </div>
 			</form>
         </div>
@@ -195,17 +190,15 @@ button {
         <div class="col-lg-12 text-center">
           <form action="/my-handling-form-page" method="post">
 			  <div>
-				<label for="name">Hotel name:</label>
-				<input type="text" id="name" name="user_name">
+				<label for="name"  class="form-control">Hotel name:<input type="text" id="name" name="user_name" class="form-control"></label>
 			  </div>
 
 			  <div>
-				<label for="mail">Hotel type:</label>
-				<input type="email" id="mail" name="user_email">
+				<label for="mail" class="form-control">Hotel type:<input type="email" id="mail" name="user_email" class="form-control"></label>
 			  </div>
 			 
 			  <div class="button">
-				<button type="submit">Insert</button>
+				<button type="submit" class="form-control form-control">Insert hotel</button>
 			  </div>
 			</form>
         </div>
@@ -217,17 +210,15 @@ button {
         <div class="col-lg-12 text-center">
           <form action="/my-handling-form-page" method="post">
 			  <div>
-				<label for="name">Service:</label>
-				<input type="text" id="name" name="user_name">
+				<label for="name" class="form-control">Service:<input type="text" id="name" name="user_name" class="form-control"></label>
 			  </div>
 
 			  <div>
-				<label for="mail">Service type:</label>
-				<input type="email" id="mail" name="user_email">
+				<label for="mail" class="form-control">Service type:<input type="email" id="mail" name="user_email" class="form-control"></label>
 			  </div>
 			 
 			  <div class="button">
-				<button type="submit">Insert</button>
+				<button type="submit" class="form-control form-control">Insert service</button>
 			  </div>
 			</form>
         </div>

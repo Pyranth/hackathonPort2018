@@ -20,7 +20,7 @@ $checkout_date = date("Y-m-d", $time);
 $br_kreveta = $_REQUEST['adults'] + $_REQUEST['children'];
 
 echo "<table class=\"table\"><tr class='first_row'><th>Hotel name</th><th>Room type</th>
-    <th>Beds</th><th>Price</th></tr>";
+    <th>Beds</th><th>Price</th><th>Reservation</th></tr>";
 if ($result = $mysqli->query("SELECT * FROM room 
 WHERE BEDS >= " . $br_kreveta . " AND room.ROOMID NOT IN(
 SELECT DISTINCT(room.ROOMID) as booked FROM room, reservation
@@ -37,7 +37,8 @@ AND room.ROOMID = reservation.ROOMID)")) {
         }
         echo "<td>" . $row['ROOMNAME'] . "</td>";
         echo "<td>".$row['BEDS']."</td>";
-        echo "<td>" . $row['PRICE'] . "</td></tr>";
+        echo "<td>" . $row['PRICE'] . "</td>";
+        echo "<td><button type='button' data-toggle=\"modal\" data-target=\"#myModal\" class='btn-success' style='border-radius: 10px;' >Reservation</button></td></tr>";
             //$myArray[] = $row;
     }
 
@@ -46,3 +47,28 @@ AND room.ROOMID = reservation.ROOMID)")) {
 }
 //echo json_encode($myArray);
 ?>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #00467e; font-family: Gotham Book, sans-serif; color: #fff;">
+                <h4 class="modal-title">Reservation</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label class="form-control">First name:<input class="form-control" type="text" placeholder="Jonh"></label>
+                    <label class="form-control">Last name:<input class="form-control" type="text" placeholder="Smith"></label>
+                    <label class="form-control"> Phone:<input class="form-control" type="text" placeholder="xx xxx xxx"></label>
+                    <label class="form-control">E-mail:<input class="form-control" type="email" placeholder="porto@porto.com"></label>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class='btn-success' style='border-radius: 10px;' class="btn btn-default" data-dismiss="modal">Reserves</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -19,6 +19,7 @@ session_start();
 
     <!-- Custom styles -->
     <link href="styles/default.css" rel="stylesheet">
+      <link href="styles/reception.css" rel="stylesheet">
 
   </head>
 
