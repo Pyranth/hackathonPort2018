@@ -19,57 +19,41 @@ if (isset($_GET['massage']))
 if (isset($_GET['message']))
 	$massage = $_GET['message'];
 
-$query = "INSERT INTO requirements (PersonID";
-
-if (isset($_GET['clean']))
-	$query .= ", `Clean Room`";
-
-if (isset($_GET['dnd']))
-	$query .= ", `Do Not Disturb`";
-
-if (isset($_GET['spa']))
-	$query .= ", `Spa`";
-
-if (isset($_GET['massage']))
-	$query .= ", Massage";
-
-if (isset($_GET['message']))
-	$query .= ", `Special Req`";
-
-$query .= ") VALUES (1";
-
+$query = "UPDATE requirements SET `PersonID`=1, `Clean Room`=";
 if (isset($_GET['clean']))
 	if ($_GET['clean'] == 'true')
-		$query .= ", TRUE";
+		$query .= "'1',";
 	else
-		$query .= ", FALSE";
+		$query .= "'0',";
+
+$query .= "`Do Not Disturb`=";
 
 if (isset($_GET['dnd']))
 	if ($_GET['dnd'] == 'true')
-		$query .= ", TRUE";
+		$query .= "'1',";
 	else
-		$query .= ", FALSE";
+		$query .= "'0',";
+$query .= "`Spa`=";
 
 if (isset($_GET['spa']))
 	if ($_GET['spa'] == 'true')
-		$query .= ", TRUE";
+		$query .= "'1',";
 	else
-		$query .= ", FALSE";
+		$query .= "'0',";
+$query .= "`Massage`=";
 
 if (isset($_GET['massage']))
 	if ($_GET['massage'] == 'true')
-		$query .= ", TRUE";
+		$query .= "'1',";
 	else
-		$query .= ", FALSE";
-
+		$query .= "'0',";
+$query .= "`Special Req`='";
 if (isset($_GET['message']))
 {
-	$query .= ", '";
 	$query .= $_GET['message'];
 	$query .= "'";
+	$query .= "WHERE `REQID` = 6;";
 }
-
-$query .= ");";
 
 $link->query($query);
 if($link)
